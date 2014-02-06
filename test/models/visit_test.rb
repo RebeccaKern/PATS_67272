@@ -31,10 +31,10 @@ class VisitTest < ActiveSupport::TestCase
   context "Given context" do
     # create the objects I want with factories
     setup do 
-      @cat = FactoryGirl.create(:animal)
-      @owner = FactoryGirl.create(:owner)
-      @dusty = FactoryGirl.create(:pet, :animal => @cat, :owner => @owner)
-      @polo = FactoryGirl.create(:pet, :animal => @cat, :owner => @owner, :name => "Polo")
+      @cat    = FactoryGirl.create(:animal)
+      @owner  = FactoryGirl.create(:owner)
+      @dusty  = FactoryGirl.create(:pet, :animal => @cat, :owner => @owner)
+      @polo   = FactoryGirl.create(:pet, :animal => @cat, :owner => @owner, :name => "Polo")
       @visit1 = FactoryGirl.create(:visit, :pet => @dusty)
       @visit2 = FactoryGirl.create(:visit, :pet => @polo, :date => 5.months.ago.to_date)
       @visit3 = FactoryGirl.create(:visit, :pet => @polo, :date => 2.months.ago.to_date)
