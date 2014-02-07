@@ -24,4 +24,6 @@ class Visit < ActiveRecord::Base
 
   # weight must be present and an integer greater than 0 and less than 100 (none of our animal types will exceed)
   validates :weight, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
+  # validates_presence_of :weight
+  # validates_numericality_of :weight, only_integer: true, greater_than: 0, less_than: 100
 end

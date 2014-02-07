@@ -46,9 +46,9 @@ class Pet < ActiveRecord::Base
   # -----------------------------
   # a method to get owner name in last, first format
   def gender
-    return "Female" if female
+    return "Female" if self.female
     "Male"
-    # female ? "Female" : "Male"
+    # self.female ? "Female" : "Male"
   end  
   
   
