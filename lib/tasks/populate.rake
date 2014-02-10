@@ -27,7 +27,7 @@ namespace :db do
     vaccines = %w[Leukemia Heartworm Rabies Distemper Parainfluenza]
     vaccines.sort.each do |vaccine|
       # have to do this for each type of animal, so...
-      animal_ids = Animal.all.to_a.map{|a| a.id}
+      animal_ids = Animal.to_a.map{|a| a.id}
       animal_ids.each do |animal_id|
         v = Vaccine.new
         v.name = vaccine
@@ -63,7 +63,7 @@ namespace :db do
       Pet.populate 1..3 do |pet|
         pet.owner_id = owner.id
         # assign an animal id from ones created in Step 2
-        pet.animal_id = Animal.all.to_a.map{|a| a.id}
+        pet.animal_id = Animal.to_a.map{|a| a.id}
         # randomly assign a pet name from list of typical pet names
         pet.name = %w[Sparky Dusty Caspian Lucky Fluffy Snuggles Snuffles Dakota Montana Cali Polo Buddy Mambo Pickles Pork\ Chop Fang Zaphod Yeller Groucho Meatball BJ CJ TJ Buttercup Bull Bojangles Copper Fozzie Nipper Mai\ Tai Bongo Bama Spot Tango Tongo Weeble]
         # randomly assign female status

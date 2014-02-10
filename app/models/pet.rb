@@ -68,7 +68,7 @@ class Pet < ActiveRecord::Base
   
   def owner_is_active_in_PATS_system
     # get an array of all active owners in the PATS system
-    all_owner_ids = Owner.active.all.map{|o| o.id}
+    all_owner_ids = Owner.active.to_a.map{|o| o.id}
     # add error unless the owner id of the pet is in the array of active owners
     unless all_owner_ids.include?(self.owner_id)
       errors.add(:owner, "is not an active owner in PATS")
