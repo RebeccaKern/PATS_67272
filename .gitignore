@@ -19,4 +19,4 @@
 .DS_Store
 
 # Normally, I'd ignore the coverage directory too, but not for this project (want students to see it)
-# /coverage
+/coverage
