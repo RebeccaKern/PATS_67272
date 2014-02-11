@@ -6,8 +6,8 @@ class VisitsHelperTest < ActionView::TestCase
     setup do 
       @cat = FactoryGirl.create(:animal)
       @alex = FactoryGirl.create(:owner)
-      @dusty = FactoryGirl.create(:pet, :animal => @cat, :owner => @alex, :female => false)
-      @polo = FactoryGirl.create(:pet, :animal => @cat, :owner => @alex, :name => "Polo")
+      @dusty = FactoryGirl.create(:pet, animal: @cat, owner: @alex, female: false)
+      @polo = FactoryGirl.create(:pet, animal: @cat, owner: @alex, name: "Polo")
     end
     
     # and provide a teardown method as well

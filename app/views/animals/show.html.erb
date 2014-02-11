@@ -17,7 +17,7 @@
 
 <!-- Add the pagination using will_paginate gem -->
 <span class="smtext">
-<%= will_paginate @pets, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+<%= will_paginate @pets, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
 </span>
 <p>
   <%= link_to "Back to All Animals", animals_path %>

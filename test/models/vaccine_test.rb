@@ -27,10 +27,10 @@ class VaccineTest < ActiveSupport::TestCase
     # create the objects I want with factories
     setup do 
       @cat = FactoryGirl.create(:animal)
-      @dog = FactoryGirl.create(:animal, :name => "Dog")
-      @rabies = FactoryGirl.create(:vaccine, :name => "Rabies", :animal => @dog)
-      @leukemia = FactoryGirl.create(:vaccine, :animal => @cat, :duration => nil)
-      @heartworm = FactoryGirl.create(:vaccine, :name => "Heartworm", :animal => @dog)
+      @dog = FactoryGirl.create(:animal, name: "Dog")
+      @rabies = FactoryGirl.create(:vaccine, name: "Rabies", animal: @dog)
+      @leukemia = FactoryGirl.create(:vaccine, animal: @cat, duration: nil)
+      @heartworm = FactoryGirl.create(:vaccine, name: "Heartworm", animal: @dog)
     end
     
     # and provide a teardown method as well

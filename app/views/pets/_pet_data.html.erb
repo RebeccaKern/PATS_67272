@@ -19,7 +19,7 @@
 	  <%= @pet.active %><br><br><br>
 
 	  <%= link_to "Edit", edit_pet_path(@pet) %> |
-	  <%= link_to "Destroy", @pet, :confirm => 'Are you sure?', :method => :delete %> |
+	  <%= link_to "Destroy", @pet, confirm: 'Are you sure?', method: :delete %> |
 	  <%= link_to "View All", pets_path %>
 </td>
 <td width="10">&nbsp;</td>

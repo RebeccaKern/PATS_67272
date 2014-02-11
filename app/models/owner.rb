@@ -4,7 +4,7 @@ class Owner < ActiveRecord::Base
   
   # Relationships
   # -----------------------------
-  has_many :pets # :dependent => :destroy  (:nullify orphans the record)
+  has_many :pets # dependent: :destroy  (:nullify orphans the record)
   has_many :visits, through: :pets
   # belongs_to :user  
   
@@ -33,16 +33,16 @@ class Owner < ActiveRecord::Base
   # make sure required fields are present
   validates_presence_of :first_name, :last_name, :email, :phone
   # if zip included, it must be 5 digits only
-  validates_format_of :zip, :with => /\A\d{5}\z/, :message => "should be five digits long", :allow_blank => true
+  validates_format_of :zip, with: /\A\d{5}\z/, message: "should be five digits long", allow_blank: true
   # phone can have dashes, spaces, dots and parens, but must be 10 digits
-  validates_format_of :phone, :with => /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/, :message => "should be 10 digits (area code needed) and delimited with dashes only"
+  validates_format_of :phone, with: /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/, message: "should be 10 digits (area code needed) and delimited with dashes only"
   # email format (other regex for email exist; doesn't allow .museum, .aero, etc.)
   # Not allowing for .uk, .ca, etc. because this is a Pittsburgh business and customers not likely to be out-of-country
-  validates_format_of :email, :with => /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i, :message => "is not a valid format"
+  validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i, message: "is not a valid format"
   # if state is given, must be one of the choices given (no hacking this field)
-  validates_inclusion_of :state, :in => %w[PA OH WV], :message => "is not an option", :allow_nil => true, :allow_blank => true
+  validates_inclusion_of :state, in: %w[PA OH WV], message: "is not an option", allow_blank: true
   # if not limited to the three states, it might be better (but slightly slower) to write:
-  # validates_inclusion_of :state, :in => STATES_LIST.map {|key, value| value}, :message => "is not an option", :allow_nil => true, :allow_blank => true
+  # validates_inclusion_of :state, in: STATES_LIST.map {|key, value| value}, message: "is not an option", allow_blank: true
    
   # a method to get owner name in last, first format
   def name

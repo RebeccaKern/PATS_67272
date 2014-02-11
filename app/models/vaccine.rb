@@ -7,7 +7,7 @@ class Vaccine < ActiveRecord::Base
   # -----------------------------
   belongs_to :animal
   has_many :vaccinations
-  has_many :visits, :through => :vaccinations
+  has_many :visits, through: :vaccinations
   
   # Scopes
   # -----------------------------

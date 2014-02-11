@@ -9,7 +9,7 @@ class AnimalsController < ApplicationController
 
   def show
     # get all the pets of that animal type that have been treated by PATS
-    @pets = Pet.by_animal(@animal.id).paginate(:page => params[:page]).per_page(10)
+    @pets = Pet.by_animal(@animal.id).paginate(page: params[:page]).per_page(10)
   end
 
   def new

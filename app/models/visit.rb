@@ -3,8 +3,8 @@ class Visit < ActiveRecord::Base
   # -----------------------------
   belongs_to :pet
   has_many :vaccinations
-  has_many :vaccines, :through => :vaccinations
-  has_one :owner, :through => :pet
+  has_many :vaccines, through: :vaccinations
+  has_one :owner, through: :pet
   
   
   # Scopes

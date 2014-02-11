@@ -5,18 +5,18 @@ class VaccinationsHelperTest < ActionView::TestCase
     # create the objects I want with factories
     setup do 
       @cat = FactoryGirl.create(:animal)
-      @rabies = FactoryGirl.create(:vaccine, :name => "Rabies", :animal => @cat)
-      @leukemia = FactoryGirl.create(:vaccine, :animal => @cat, :duration => nil)
+      @rabies = FactoryGirl.create(:vaccine, name: "Rabies", animal: @cat)
+      @leukemia = FactoryGirl.create(:vaccine, animal: @cat, duration: nil)
       @alex = FactoryGirl.create(:owner)
-      @dusty = FactoryGirl.create(:pet, :animal => @cat, :owner => @alex, :female => false)
-      @polo = FactoryGirl.create(:pet, :animal => @cat, :owner => @alex, :name => "Polo")
-      @visit1 = FactoryGirl.create(:visit, :pet => @dusty)
-      @visit2 = FactoryGirl.create(:visit, :pet => @polo, :date => 5.months.ago.to_date)
-      @visit3 = FactoryGirl.create(:visit, :pet => @polo, :date => 3.months.ago.to_date)
-      @vacc1 = FactoryGirl.create(:vaccination, :visit => @visit1, :vaccine => @leukemia)
-      @vacc2 = FactoryGirl.create(:vaccination, :visit => @visit2, :vaccine => @rabies)
-      @vacc3 = FactoryGirl.create(:vaccination, :visit => @visit2, :vaccine => @leukemia)
-      @vacc4 = FactoryGirl.create(:vaccination, :visit => @visit3, :vaccine => @leukemia)
+      @dusty = FactoryGirl.create(:pet, animal: @cat, owner: @alex, female: false)
+      @polo = FactoryGirl.create(:pet, animal: @cat, owner: @alex, name: "Polo")
+      @visit1 = FactoryGirl.create(:visit, pet: @dusty)
+      @visit2 = FactoryGirl.create(:visit, pet: @polo, date: 5.months.ago.to_date)
+      @visit3 = FactoryGirl.create(:visit, pet: @polo, date: 3.months.ago.to_date)
+      @vacc1 = FactoryGirl.create(:vaccination, visit: @visit1, vaccine: @leukemia)
+      @vacc2 = FactoryGirl.create(:vaccination, visit: @visit2, vaccine: @rabies)
+      @vacc3 = FactoryGirl.create(:vaccination, visit: @visit2, vaccine: @leukemia)
+      @vacc4 = FactoryGirl.create(:vaccination, visit: @visit3, vaccine: @leukemia)
     end
     
     # and provide a teardown method as well

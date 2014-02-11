@@ -18,13 +18,13 @@ class PetTest < ActiveSupport::TestCase
     # create the objects I want with factories
     setup do 
       @cat = FactoryGirl.create(:animal)
-      @dog = FactoryGirl.create(:animal, :name => "Dog")
+      @dog = FactoryGirl.create(:animal, name: "Dog")
       @alex = FactoryGirl.create(:owner)
-      @mark = FactoryGirl.create(:owner, :first_name => "Mark")
-      @rachel = FactoryGirl.create(:owner, :first_name => "Rachel", :active => false)
-      @dusty = FactoryGirl.create(:pet, :animal => @cat, :owner => @alex, :female => false)
-      @polo = FactoryGirl.create(:pet, :animal => @cat, :owner => @alex, :name => "Polo", :active => false)
-      @pork_chop = FactoryGirl.create(:pet, :animal => @dog, :owner => @mark, :name => "Pork Chop")
+      @mark = FactoryGirl.create(:owner, first_name: "Mark")
+      @rachel = FactoryGirl.create(:owner, first_name: "Rachel", active: false)
+      @dusty = FactoryGirl.create(:pet, animal: @cat, owner: @alex, female: false)
+      @polo = FactoryGirl.create(:pet, animal: @cat, owner: @alex, name: "Polo", active: false)
+      @pork_chop = FactoryGirl.create(:pet, animal: @dog, owner: @mark, name: "Pork Chop")
     end
     
     # and provide a teardown method as well
@@ -92,8 +92,8 @@ class PetTest < ActiveSupport::TestCase
     # test the custom validation 'animal_type_treated_by_PATS'
     should "identify a non-PATS animal type as invalid" do
       # using 'build' instead of 'create' so not added to db; animal will not be in the system (only in memory)
-      @turtle = FactoryGirl.build(:animal, :name => "Turtle")
-      turtle_pet = FactoryGirl.build(:pet, :animal => @turtle, :owner => @mark, :name => "Surfer")
+      @turtle = FactoryGirl.build(:animal, name: "Turtle")
+      turtle_pet = FactoryGirl.build(:pet, animal: @turtle, owner: @mark, name: "Surfer")
       deny turtle_pet.valid?
       # we've created plenty of valid pets earlier, so not testing the validation allows good cases here...
     end
@@ -102,7 +102,7 @@ class PetTest < ActiveSupport::TestCase
     should "identify a non-active PATS owner as invalid" do
       # remembering that Rachel is an inactive owner, let's build her pet in memory only (if we use
       # 'FactoryGirl.create' we will get a validation error and the test will stop prematurely.)
-      inactive_owner = FactoryGirl.build(:pet, :animal => @dog, :owner => @rachel, :name => "Daisy")
+      inactive_owner = FactoryGirl.build(:pet, animal: @dog, owner: @rachel, name: "Daisy")
       deny inactive_owner.valid?
       # again we've created plenty of valid pets earlier, so only testing the bad cases here...
     end

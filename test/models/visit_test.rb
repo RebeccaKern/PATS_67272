@@ -33,11 +33,11 @@ class VisitTest < ActiveSupport::TestCase
     setup do 
       @cat    = FactoryGirl.create(:animal)
       @owner  = FactoryGirl.create(:owner)
-      @dusty  = FactoryGirl.create(:pet, :animal => @cat, :owner => @owner)
-      @polo   = FactoryGirl.create(:pet, :animal => @cat, :owner => @owner, :name => "Polo")
-      @visit1 = FactoryGirl.create(:visit, :pet => @dusty)
-      @visit2 = FactoryGirl.create(:visit, :pet => @polo, :date => 5.months.ago.to_date)
-      @visit3 = FactoryGirl.create(:visit, :pet => @polo, :date => 2.months.ago.to_date)
+      @dusty  = FactoryGirl.create(:pet, animal: @cat, owner: @owner)
+      @polo   = FactoryGirl.create(:pet, animal: @cat, owner: @owner, name: "Polo")
+      @visit1 = FactoryGirl.create(:visit, pet: @dusty)
+      @visit2 = FactoryGirl.create(:visit, pet: @polo, date: 5.months.ago.to_date)
+      @visit3 = FactoryGirl.create(:visit, pet: @polo, date: 2.months.ago.to_date)
     end
     
     # and provide a teardown method as well

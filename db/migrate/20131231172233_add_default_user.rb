@@ -12,7 +12,7 @@ class AddDefaultUser < ActiveRecord::Migration
 
   def down
     # find the default user created in the 'up' method
-    vet = User.find(:first, :conditions => ["username = ?", "vet"])
+    vet = User.find(:first, conditions: ["username = ?", "vet"])
     # delete the user when rolling back the migration
     User.delete vet
   end

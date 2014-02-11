@@ -61,8 +61,8 @@ class OwnerTest < ActiveSupport::TestCase
     # create the objects I want with factories
     setup do 
       @alex = FactoryGirl.create(:owner)
-      @rachel = FactoryGirl.create(:owner, :first_name => "Rachel", :active => false)
-      @mark = FactoryGirl.create(:owner, :first_name => "Mark", :phone => "412-268-8211")
+      @rachel = FactoryGirl.create(:owner, first_name: "Rachel", active: false)
+      @mark = FactoryGirl.create(:owner, first_name: "Mark", phone: "412-268-8211")
     end
     
     # and provide a teardown method as well

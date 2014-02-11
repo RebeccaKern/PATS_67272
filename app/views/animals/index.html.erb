@@ -11,8 +11,8 @@
       <td><%= link_to animal.name, animal_path(animal) %></td>
 	  <td align="center"><%= animal.created_at.strftime("%B %d, %Y") %></td>
 	  <td align="center">
-		<%= link_to(image_tag("icons/edit_dg.gif", :border => 0), edit_animal_path(animal))  %>&nbsp;
-		<%= link_to(image_tag("icons/delete_dg.gif", :border => 0), animal_path(animal), :confirm => 'Are you sure you wish to delete this information?', :method => :delete) %>
+		<%= link_to(image_tag("icons/edit_dg.gif", border: 0), edit_animal_path(animal))  %>&nbsp;
+		<%= link_to(image_tag("icons/delete_dg.gif", border: 0), animal_path(animal), confirm: 'Are you sure you wish to delete this information?', method: :delete) %>
 	  </td>
     </tr>
   <% end %>
