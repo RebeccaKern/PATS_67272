@@ -1,5 +1,5 @@
 class Owner < ActiveRecord::Base
-    # create a callback that will strip non-digits before saving to db
+  # create a callback that will strip non-digits before saving to db
   before_save :reformat_phone
   
   # Relationships
