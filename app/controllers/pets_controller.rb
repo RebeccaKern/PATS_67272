@@ -14,7 +14,7 @@ class PetsController < ApplicationController
 
   def show
     # get the last 10 visits for this pet
-    @recent_visits = @pet.visits.last(10).to_a
+    @recent_visits = @pet.visits.chronological.last(10).to_a
     respond_with @pet
   end
 
