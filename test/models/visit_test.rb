@@ -75,11 +75,11 @@ class VisitTest < ActiveSupport::TestCase
       assert_equal 2, Visit.for_pet(@polo.id).size
     end
     
-    # test the named scope 'last'
-    should "have named scope last that works" do
-      assert_equal 2, Visit.for_pet(@polo.id).last(5).size
-      assert_equal 2, Visit.for_pet(@polo.id).last(2).size
-      assert_equal 1, Visit.for_pet(@polo.id).last(1).size
+    # test the named scope 'last_x'
+    should "have named scope last_x that works" do
+      assert_equal 2, Visit.for_pet(@polo.id).last_x(5).size
+      assert_equal 2, Visit.for_pet(@polo.id).last_x(2).size
+      assert_equal 1, Visit.for_pet(@polo.id).last_x(1).size
     end
   end
 end

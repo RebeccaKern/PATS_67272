@@ -38,6 +38,9 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use a gem for handling pagination
 gem 'will_paginate'
 
+# Getting back the respond_to functionality
+gem 'responders', '~> 2.0'
+
 # Additional gems that are very useful in Rails development
 group :development do
 	gem 'quiet_assets'

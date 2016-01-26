@@ -14,7 +14,7 @@ class Visit < ActiveRecord::Base
    # get all the visits by a particular pet (using the 'stabby lambda' notation here)
    scope :for_pet, ->(pet_id) { where('pet_id = ?', pet_id) }
    # get the last X visits (using the 'stabby lambda' notation here)
-   scope :last, ->(num) { limit(num).order('date DESC') }
+   scope :last_x, ->(num) { limit(num).order('date DESC') }
 
   
   # Validations

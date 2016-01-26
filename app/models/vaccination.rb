@@ -14,7 +14,7 @@ class Vaccination < ActiveRecord::Base
   # get all the vaccinations given on a particular visit
   scope :for_visit, ->(visit_id) { where("visit_id = ?", visit_id) }
   # get the last X number of vaccinations
-  scope :last, ->(num) { limit(num) }
+  scope :last_x, ->(num) { limit(num) }
 
   
   # Validations
