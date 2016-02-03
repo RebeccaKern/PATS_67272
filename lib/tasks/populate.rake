@@ -27,7 +27,7 @@ namespace :db do
     vaccines = %w[Leukemia Heartworm Rabies Distemper Parainfluenza]
     vaccines.sort.each do |vaccine|
       # have to do this for each type of animal, so...
-      animal_ids = Animal.all.to_a.map{|a| a.id}
+      animal_ids = Animal.all.to_a.map{|a| a.id} #map(&:id)
       animal_ids.each do |animal_id|
         v = Vaccine.new
         v.name = vaccine
