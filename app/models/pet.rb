@@ -49,6 +49,11 @@ class Pet < ActiveRecord::Base
     return "Female" if self.female
     "Male"
     # self.female ? "Female" : "Male"
+    # if self.female 
+    #   return "Female"
+    # else
+    #   return "Male"
+    # end
   end  
   
   
