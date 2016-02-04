@@ -171,6 +171,8 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    single_test (0.6.0)
+      rake
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -227,6 +229,7 @@ DEPENDENCIES
   shoulda
   shoulda-matchers
   simplecov
+  single_test
   sqlite3
   thin
   turbolinks

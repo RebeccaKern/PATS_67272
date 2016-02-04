@@ -66,4 +66,5 @@ group :test do
   gem 'mocha'
   gem 'nokogiri'
   gem 'simplecov'
+  gem 'single_test'
 end
