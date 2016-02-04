@@ -1,10 +1,12 @@
 require 'simplecov'
 SimpleCov.start 'rails'
-# require 'minitest'
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-# require 'turn/autorun'
+require 'minitest/rails'
+require 'minitest/reporters'
+require 'minitest/perf'
+require 'minitest_extensions'
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -18,6 +20,14 @@ class ActiveSupport::TestCase
     # a simple transformation to increase readability IMO
     assert !condition
   end
+
+  # Spruce up minitest results...
+  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
+  # reporter_options = { color: true, slow_count: 5 }
+  # Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(reporter_options)]
+
+
+
 end
 
 # Formatting test output a litte nicer

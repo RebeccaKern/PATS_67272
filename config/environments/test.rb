@@ -13,7 +13,7 @@ PATS67272::Application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_assets  = true
+  config.serve_static_files  = true
   config.static_cache_control = "public, max-age=3600"
 
   # Show full error reports and disable caching.
@@ -36,4 +36,7 @@ PATS67272::Application.configure do
   
   # We are not worrying about locales and internationalization, so ignore warning during testing...
   I18n.enforce_available_locales = false
+
+  # Because I want the tests run in some order that makes sense...
+  config.active_support.test_order = :sorted
 end

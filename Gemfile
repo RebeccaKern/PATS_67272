@@ -56,12 +56,14 @@ end
 
 # Gems used only in testing
 group :test do
-	gem 'shoulda'
-	gem 'shoulda-matchers'
-	gem 'factory_girl_rails'
-	gem 'mocha', require: false
-	gem 'simplecov'
-  # gem 'turn'
-  gem 'single_test'
-	# gem 'tconsole'  # issues with matchers and minitest, so skip for now
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'minitest'
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
+  gem 'minitest-perf'
+  gem 'factory_girl_rails'
+  gem 'mocha'
+  gem 'nokogiri'
+  gem 'simplecov'
 end
