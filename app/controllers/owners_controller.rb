@@ -24,7 +24,7 @@ class OwnersController < ApplicationController
     if @owner.save
       # if saved to database
       flash[:notice] = "Successfully created #{@owner.proper_name}."
-      redirect_to @owner # go to show owner page
+      redirect_to owner_path(@owner) # go to show owner page
     else
       # return to the 'new' form
       render action: 'new'
