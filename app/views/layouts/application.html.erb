@@ -25,10 +25,10 @@
           <td>
             <!-- if logged in, give side navigation for the vet  -->
             <% if logged_in? %>
-              <%= render 'partials/side_nav' %>
+              <%= render partial: 'partials/side_nav' %>
             <!-- otherwise display a nice collection of animal pictures  -->
             <% else %>
-              <%= render 'partials/animal_pics' %>
+              <%= render partial: 'partials/animal_pics' %>
             <% end %>
           </td>
           <td width="5">&nbsp;</td>
